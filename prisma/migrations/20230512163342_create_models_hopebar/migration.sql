@@ -2,8 +2,8 @@
 CREATE TABLE "categories" (
     "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
-    "created_at" TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP,
+    "create_at" TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP,
+    "update_at" TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "categories_pkey" PRIMARY KEY ("id")
 );
@@ -15,8 +15,8 @@ CREATE TABLE "products" (
     "price" TEXT NOT NULL,
     "description" TEXT NOT NULL,
     "banner" TEXT NOT NULL,
-    "created_at" TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP,
+    "create_at" TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP,
+    "update_at" TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP,
     "category_id" TEXT NOT NULL,
 
     CONSTRAINT "products_pkey" PRIMARY KEY ("id")
@@ -29,8 +29,8 @@ CREATE TABLE "orders" (
     "status" BOOLEAN NOT NULL DEFAULT false,
     "draft" BOOLEAN NOT NULL DEFAULT true,
     "name" TEXT,
-    "created_at" TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP,
+    "create_at" TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP,
+    "update_at" TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "orders_pkey" PRIMARY KEY ("id")
 );
@@ -39,8 +39,8 @@ CREATE TABLE "orders" (
 CREATE TABLE "Items" (
     "id" TEXT NOT NULL,
     "amount" INTEGER NOT NULL,
-    "created_at" TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP,
+    "create_at" TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP,
+    "update_at" TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP,
     "order_id" TEXT NOT NULL,
     "product_id" TEXT NOT NULL,
 
