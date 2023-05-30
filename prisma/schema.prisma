@@ -16,8 +16,8 @@ model User {
   name String
   email String
   password String
-  created_at DateTime? @default(now())
-  updated_at DateTime? @default(now())
+  create_at DateTime? @default(now())
+  update_at DateTime? @default(now())
 
   @@map("users")
 }
@@ -25,8 +25,8 @@ model User {
 model Category{
   id String @id @default(uuid())
   name String
-  created_at DateTime? @default(now())
-  updated_at DateTime? @default(now())
+  create_at DateTime? @default(now())
+  update_at DateTime? @default(now())
 
   @@map("categories")
   products Product[]
@@ -38,8 +38,8 @@ model Product{
   price String
   description String
   banner String
-  created_at DateTime? @default(now())
-  updated_at DateTime? @default(now())
+  create_at DateTime? @default(now())
+  update_at DateTime? @default(now())
 
   category Category @relation(fields: [category_id], references: [id])
 
@@ -55,8 +55,8 @@ model Order{
   draft Boolean @default(true)
   name String?
 
-  created_at DateTime? @default(now())
-  updated_at DateTime? @default(now())
+  create_at DateTime? @default(now())
+  update_at DateTime? @default(now())
 
   @@map("orders")
   items Item[]
@@ -66,8 +66,8 @@ model Item{
   id String @id @default(uuid())
   amount Int
 
-  created_at DateTime? @default(now())
-  updated_at DateTime? @default(now())
+  create_at DateTime? @default(now())
+  update_at DateTime? @default(now())
 
   order Order @relation(fields: [order_id], references: [id])
   product Product @relation(fields: [product_id], references: [id])
